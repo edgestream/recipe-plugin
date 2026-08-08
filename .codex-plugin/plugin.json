@@ -1,18 +1,18 @@
 {
   "name": "recipe-plugin",
   "version": "0.1.0",
-  "description": "Recipe Plugin with pluggable cooking recipe providers.",
+  "description": "Read-only MCP plugin for public Chefkoch recipes.",
   "author": {
     "name": "Local developer"
   },
   "interface": {
     "displayName": "Recipe Plugin",
-    "shortDescription": "Look up structured cooking recipes.",
-    "longDescription": "Recipe Plugin provides structured Schema.org Recipe data from pluggable recipe providers.",
+    "shortDescription": "Search and read public Chefkoch recipes.",
+    "longDescription": "Recipe Plugin provides structured public Chefkoch recipe data without authentication.",
     "developerName": "Local developer",
     "category": "Lifestyle",
     "capabilities": [],
-    "defaultPrompt": "Get the recipe for https://recipes.example.test/mock/classic-pancakes",
+    "defaultPrompt": "Search Chefkoch for a vegetarian pasta recipe",
     "brandColor": "#242424",
     "composerIcon": "./assets/branding/exports/recipe-plugin-icon-256.png",
     "logo": "./assets/branding/recipe-plugin-icon.png",

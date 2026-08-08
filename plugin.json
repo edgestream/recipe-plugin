@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "recipe-plugin",
   "version": "0.1.0",
-  "description": "Recipe Plugin with pluggable cooking recipe providers.",
+  "description": "Read-only MCP plugin for public Chefkoch recipes.",
   "author": {
     "name": "Recipe Plugin contributors"
   },
