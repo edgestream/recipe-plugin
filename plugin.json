@@ -2,10 +2,10 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "recipe-plugin",
   "version": "0.1.0",
-  "description": "Read-only MCP plugin for public Chefkoch recipes.",
+  "description": "Search and read cooking recipes",
   "author": {
-    "name": "Recipe Plugin contributors"
+    "name": "Edgestream"
   },
   "license": "MIT",
-  "keywords": ["recipes", "cooking", "schema.org", "mcp"]
+  "keywords": ["recipes", "cooking"]
 }

@@ -1,18 +1,18 @@
 {
   "name": "recipe-plugin",
   "version": "0.1.0",
-  "description": "Read-only MCP plugin for public Chefkoch recipes.",
+  "description": "Search and read cooking recipes",
   "author": {
-    "name": "Local developer"
+    "name": "Edgestream"
   },
   "interface": {
     "displayName": "Recipe Plugin",
-    "shortDescription": "Search and read public Chefkoch recipes.",
-    "longDescription": "Recipe Plugin provides structured public Chefkoch recipe data without authentication.",
-    "developerName": "Local developer",
+    "shortDescription": "Search and read public recipes.",
+    "longDescription": "Search and read structured public cooking recipe data from various providers.",
+    "developerName": "Edgestream",
     "category": "Lifestyle",
     "capabilities": [],
-    "defaultPrompt": "Search Chefkoch for a vegetarian pasta recipe",
+    "defaultPrompt": "Find a vegetarian pasta recipe",
     "brandColor": "#242424",
     "composerIcon": "./assets/branding/exports/recipe-plugin-icon-256.png",
     "logo": "./assets/branding/recipe-plugin-icon.png",

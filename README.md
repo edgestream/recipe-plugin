@@ -1,8 +1,8 @@
 # Recipe Plugin
 
-Portable [Agent Plugins](https://agent-plugins.org/) package for public Chefkoch recipes. It exposes `search_recipes(query, limit)` and `get_recipe(url)` MCP tools through a read-only, anonymous Chefkoch provider.
+Portable [Agent Plugins](https://agent-plugins.org/) package for publicly available recipes. It exposes `search_recipes(query, limit)` and `get_recipe(url)` MCP tools through a read-only, anonymous recipe provider.
 
-`search_recipes` uses Chefkoch's public search endpoint, does not apply a PLUS filter, and returns compact result cards. `get_recipe` accepts only HTTPS URLs on `chefkoch.de` and returns a normalized recipe document. Neither tool sends credentials, creates persistent browser state, or attempts to bypass access controls. Results can include recipes marked as PLUS, but the plugin never authenticates to access restricted content.
+The currently configured provider is Chefkoch. `search_recipes` uses its public search endpoint, does not apply a PLUS filter, and returns compact result cards. `get_recipe` currently accepts only HTTPS URLs on `chefkoch.de` and returns a normalized recipe document. Neither tool sends credentials, creates persistent browser state, or attempts to bypass access controls. Results can include recipes marked as PLUS, but the plugin never authenticates to access restricted content.
 
 ## Layout
 

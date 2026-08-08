@@ -14,8 +14,8 @@ from .recipe_jsonld import RecipeNotFoundError
 mcp = FastMCP(
     "recipe-mcp",
     instructions=(
-        "Use search_recipes for Chefkoch recipe searches and get_recipe when the user "
-        "supplies a Chefkoch recipe URL. Both tools only access publicly available data "
+        "Use search_recipes to find recipes and get_recipe when the user supplies a "
+        "recipe URL. Both tools only access publicly available data "
         "and never require or use credentials."
     ),
     host=os.environ.get("RECIPE_MCP_HOST", "127.0.0.1"),
@@ -37,18 +37,18 @@ def _error(exc: Exception) -> dict[str, str]:
     return {"outcome": "upstream_error", "message": "Chefkoch could not complete the request."}
 
 
-@mcp.tool(name="get_recipe", description="Fetch and normalize one public Chefkoch recipe URL.", annotations=READ_ONLY_TOOL)
+@mcp.tool(name="get_recipe", description="Fetch and normalize one public recipe URL.", annotations=READ_ONLY_TOOL)
 async def get_recipe(url: str) -> dict[str, Any]:
-    """Fetch one public Chefkoch recipe without authentication."""
+    """Fetch one public recipe without authentication."""
     try:
         return {"outcome": "success", "recipe": (await ChefkochClient().get_recipe(url)).to_dict()}
     except Exception as exc:
         return _error(exc)
 
 
-@mcp.tool(name="search_recipes", description="Search public Chefkoch recipes without a PLUS filter.", annotations=READ_ONLY_TOOL)
+@mcp.tool(name="search_recipes", description="Search publicly available recipes.", annotations=READ_ONLY_TOOL)
 async def search_recipes(query: str, limit: int = 10) -> dict[str, object]:
-    """Search public Chefkoch recipe cards; results may include marked PLUS cards."""
+    """Search public recipes matching a free-text query."""
     try:
         recipes = await ChefkochClient().search_recipes(query, limit)
         return {"outcome": "success", "recipes": [recipe.to_dict() for recipe in recipes]}
