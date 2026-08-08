@@ -5,7 +5,6 @@
   "author": {
     "name": "Local developer"
   },
-  "skills": "./skills/",
   "interface": {
     "displayName": "Recipe Plugin",
     "shortDescription": "Look up structured cooking recipes.",
