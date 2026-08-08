@@ -11,7 +11,7 @@
     "shortDescription": "Look up structured cooking recipes.",
     "longDescription": "Recipe Plugin provides structured Schema.org Recipe data from pluggable recipe providers.",
     "developerName": "Local developer",
-    "category": "Productivity",
+    "category": "Lifestyle",
     "capabilities": [],
     "defaultPrompt": "Get the recipe for https://recipes.example.test/mock/classic-pancakes",
     "brandColor": "#242424",
