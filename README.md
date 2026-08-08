@@ -60,15 +60,6 @@ the public `/mcp` path to port `8001`. Outside the container, the server retains
 loopback-only default; override `RECIPE_MCP_HOST` and `RECIPE_MCP_PORT` only when
 needed.
 
-## Public deployment
-
-The public Streamable HTTP MCP endpoint is:
-
-```
-https://recipe.dev.edgestream.cloud/mcp
-```
-
-It is deployed to the OKE cluster from
-`ghcr.io/edgestream/recipe-plugin/recipe-mcp:0.1.0` and exposed through
-Traefik with a cert-manager-managed TLS certificate. Both `mcp.json` and
-`.mcp.json` use this endpoint.
+The packaged MCP configuration uses the non-routable mock endpoint
+`https://recipes.example.test/mcp`. Configure a real endpoint only in the
+deployment or marketplace environment that requires it.
