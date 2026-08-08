@@ -59,8 +59,15 @@ the public `/mcp` path to port `8001`. Outside the container, the server retains
 loopback-only default; override `RECIPE_MCP_HOST` and `RECIPE_MCP_PORT` only when
 needed.
 
-## Deploy on `srv1`
+## Public deployment
 
-The portable configuration uses `https://srv1/recipe` because Agent Plugins requires HTTPS for non-loopback endpoints. On `srv1`, install the package into `/opt/recipe-plugin-venv` using Python 3.11, install `deploy/recipe-mcp.service`, and enable `deploy/nginx-recipe-mcp.conf`. NGINX maps `/recipe` to the MCP server's private `/mcp` endpoint on `127.0.0.1:8001`.
+The public Streamable HTTP MCP endpoint is:
 
-For a private LAN CA, install its public root certificate on every MCP client that connects to `srv1`, or replace it with your own trusted internal certificate setup.
+```
+https://recipe.dev.edgestream.cloud/mcp
+```
+
+It is deployed to the OKE cluster from
+`ghcr.io/edgestream/recipe-plugin/recipe-mcp:0.1.0` and exposed through
+Traefik with a cert-manager-managed TLS certificate. Both `mcp.json` and
+`.mcp.json` use this endpoint.

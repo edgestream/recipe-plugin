@@ -3,7 +3,7 @@
   "mcpServers": {
     "recipe-mcp": {
       "type": "streamable-http",
-      "url": "https://srv1/recipe"
+      "url": "https://recipe.dev.edgestream.cloud/mcp"
     }
   }
 }
