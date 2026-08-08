@@ -2,7 +2,7 @@
 FROM python:3.11-slim
 
 LABEL org.opencontainers.image.source="https://github.com/edgestream/recipe-plugin" \
-      org.opencontainers.image.description="Streamable HTTP MCP server for structured cooking recipes" \
+      org.opencontainers.image.description="Streamable HTTP Recipe MCP server" \
       org.opencontainers.image.licenses="MIT"
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
