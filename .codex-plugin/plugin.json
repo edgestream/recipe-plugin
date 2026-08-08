@@ -13,7 +13,11 @@
     "developerName": "Local developer",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "Get the recipe for https://recipes.example.test/mock/classic-pancakes"
+    "defaultPrompt": "Get the recipe for https://recipes.example.test/mock/classic-pancakes",
+    "brandColor": "#242424",
+    "composerIcon": "./assets/branding/exports/recipe-plugin-icon-256.png",
+    "logo": "./assets/branding/recipe-plugin-icon.png",
+    "logoDark": "./assets/branding/recipe-plugin-icon.png"
   },
   "mcpServers": "./.mcp.json"
 }
