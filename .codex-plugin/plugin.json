@@ -6,8 +6,8 @@
     "name": "Edgestream"
   },
   "interface": {
-    "displayName": "Recipe Plugin",
-    "shortDescription": "Search and read public recipes.",
+    "displayName": "Recipe",
+    "shortDescription": "Search and read cooking recipes",
     "longDescription": "Search and read structured public cooking recipe data from various providers.",
     "developerName": "Edgestream",
     "category": "Lifestyle",
