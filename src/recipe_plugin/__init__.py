@@ -1,0 +1,1 @@
+"""Recipe MCP server package."""

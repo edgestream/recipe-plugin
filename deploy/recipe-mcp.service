@@ -1,0 +1,15 @@
+[Unit]
+Description=Recipe MCP server
+After=network.target
+
+[Service]
+Type=simple
+User=marioschmidt
+WorkingDirectory=/srv/project/recipe-plugin
+ExecStart=/opt/recipe-plugin-venv/bin/recipe-mcp
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

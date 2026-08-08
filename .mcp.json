@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "recipe-mcp": {
+      "type": "http",
+      "url": "https://srv1/recipe"
+    }
+  }
+}

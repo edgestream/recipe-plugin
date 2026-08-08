@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "recipe-plugin",
+  "version": "0.1.0",
+  "description": "Recipe Plugin with pluggable cooking recipe providers.",
+  "author": {
+    "name": "Recipe Plugin contributors"
+  },
+  "license": "MIT",
+  "keywords": ["recipes", "cooking", "schema.org", "mcp"]
+}

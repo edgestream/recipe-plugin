@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Classic Pancakes",
+  "description": "Fluffy skillet pancakes for a leisurely breakfast.",
+  "url": "https://recipes.example.test/mock/classic-pancakes",
+  "image": "https://recipes.example.test/images/classic-pancakes.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "Recipe Plugin Mock Provider"
+  },
+  "datePublished": "2026-08-08",
+  "prepTime": "PT10M",
+  "cookTime": "PT15M",
+  "totalTime": "PT25M",
+  "recipeYield": "4 servings",
+  "recipeCategory": "Breakfast",
+  "recipeCuisine": "International",
+  "keywords": "pancakes, breakfast, mock provider",
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "320 calories"
+  },
+  "recipeIngredient": [
+    "250 g all-purpose flour",
+    "2 tablespoons sugar",
+    "2 teaspoons baking powder",
+    "1 pinch salt",
+    "2 eggs",
+    "300 ml milk",
+    "30 g melted butter"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "Whisk flour, sugar, baking powder, and salt in a large bowl."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Whisk in eggs, milk, and melted butter until just combined."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Cook ladles of batter in a lightly buttered skillet until golden on both sides."
+    }
+  ]
+}

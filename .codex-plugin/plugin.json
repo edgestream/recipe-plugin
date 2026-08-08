@@ -1,0 +1,19 @@
+{
+  "name": "recipe-plugin",
+  "version": "0.1.0",
+  "description": "Recipe Plugin with pluggable cooking recipe providers.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Recipe Plugin",
+    "shortDescription": "Look up structured cooking recipes.",
+    "longDescription": "Recipe Plugin provides structured Schema.org Recipe data from pluggable recipe providers.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Get the recipe for https://recipes.example.test/mock/classic-pancakes"
+  },
+  "mcpServers": "./.mcp.json"
+}
