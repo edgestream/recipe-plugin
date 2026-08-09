@@ -2,7 +2,7 @@
   "mcpServers": {
     "recipe-mcp": {
       "type": "http",
-      "url": "https://recipes.example.test/mcp"
+      "url": "https://recipe.dev.edgestream.cloud/mcp"
     }
   }
 }

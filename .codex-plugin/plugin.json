@@ -1,6 +1,6 @@
 {
-  "name": "recipe-plugin",
-  "version": "0.1.0",
+  "name": "recipe",
+  "version": "0.1.0+codex.20260809084923",
   "description": "Search and read cooking recipes",
   "author": {
     "name": "Edgestream"
@@ -8,11 +8,11 @@
   "interface": {
     "displayName": "Recipe",
     "shortDescription": "Search and read cooking recipes",
-    "longDescription": "Search and read structured public cooking recipe data from various providers.",
+    "longDescription": "Provides structured recipe data from various pluggable recipe providers.",
     "developerName": "Edgestream",
     "category": "Lifestyle",
     "capabilities": [],
-    "defaultPrompt": "Find a vegetarian pasta recipe",
+    "defaultPrompt": "Search vegetarian pasta recipes",
     "brandColor": "#242424",
     "composerIcon": "./assets/branding/exports/recipe-plugin-icon-256.png",
     "logo": "./assets/branding/recipe-plugin-icon.png",
