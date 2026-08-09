@@ -21,13 +21,13 @@ python -m pip install -e .[dev]
 recipe-mcp
 ```
 
-The streamable HTTP endpoint is exposed at `http://localhost:8000/mcp` by the MCP Python SDK. Test it with the MCP Inspector:
+The streamable HTTP endpoint is exposed at `http://localhost:8000/`. Test it with the MCP Inspector:
 
 ```powershell
 npx @modelcontextprotocol/inspector
 ```
 
-Select **Streamable HTTP** and connect to `http://localhost:8000/mcp`.
+Select **Streamable HTTP** and connect to `http://localhost:8000/`.
 
 ## Container image
 
@@ -38,7 +38,7 @@ docker build -t recipe-mcp:local .
 docker run --rm -p 8001:8001 recipe-mcp:local
 ```
 
-The MCP endpoint is then available at `http://localhost:8001/mcp`.
+The MCP endpoint is then available at `http://localhost:8001/`.
 
 For the Kubernetes cluster, publish a multi-platform image so its ARM64 nodes pull
 the correct image automatically. Replace `REGISTRY/recipe-mcp:TAG` with the
@@ -57,10 +57,10 @@ docker run --rm --platform linux/arm64 -p 8001:8001 recipe-mcp:arm64-test
 
 The image runs as an unprivileged `recipe` user and listens on all interfaces at
 port `8001`. Put it behind a Kubernetes Service and TLS-enabled Ingress that routes
-the public `/mcp` path to port `8001`. Outside the container, the server retains its
+the public root path to port `8001`. Outside the container, the server retains its
 loopback-only default; override `RECIPE_MCP_HOST` and `RECIPE_MCP_PORT` only when
 needed.
 
 The packaged MCP configuration uses the non-routable placeholder endpoint
-`https://recipes.example.test/mcp`. Configure the deployed endpoint only in the
+`https://recipes.example.test/`. Configure the deployed endpoint only in the
 deployment or marketplace environment that requires it.
