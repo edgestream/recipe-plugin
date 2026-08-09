@@ -11,6 +11,7 @@ from .normalize import normalize_recipe
 from .recipe_jsonld import RecipeNotFoundError, _JsonLdScriptParser, decode_nuxt_payload, extract_recipe_jsonld
 
 SEARCH_URL = "https://www.chefkoch.de/rs/s0/{query}/Rezepte.html"
+SEARCH_IMAGE_FORMAT = "crop-960x540"
 
 
 class ChallengeRequiredError(RuntimeError):
@@ -85,7 +86,16 @@ def _extract_candidates(html: str) -> list[RecipeCandidate]:
             continue
         if url not in seen:
             seen.add(url)
-            candidates.append(RecipeCandidate(str(record["id"]) if record.get("id") is not None else None, title, url, record.get("description") if isinstance(record.get("description"), str) else None, _candidate_image(record), record.get("isPlus") is True))
+            candidates.append(
+                RecipeCandidate(
+                    str(record["id"]) if record.get("id") is not None else None,
+                    title,
+                    url,
+                    _candidate_description(record),
+                    _candidate_image(record),
+                    record.get("isPlus") is True,
+                )
+            )
     return candidates
 
 
@@ -97,7 +107,21 @@ def _walk_dicts(value: object):
         for child in value: yield from _walk_dicts(child)
 
 
+def _candidate_description(record: dict[str, object]) -> str | None:
+    for key in ("description", "subtitle"):
+        value = record.get(key)
+        if isinstance(value, str) and (text := value.strip()):
+            return text
+    return None
+
+
 def _candidate_image(record: dict[str, object]) -> str | None:
     image = record.get("image") or record.get("imageUrl")
-    if isinstance(image, str): return image
-    return image.get("url") if isinstance(image, dict) and isinstance(image.get("url"), str) else None
+    if isinstance(image, str):
+        return image
+    if isinstance(image, dict) and isinstance(image.get("url"), str):
+        return image["url"]
+    template = record.get("previewImageUrlTemplate")
+    if isinstance(template, str) and template.strip():
+        return template.replace("<format>", SEARCH_IMAGE_FORMAT)
+    return None
