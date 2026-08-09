@@ -1,6 +1,6 @@
 {
-  "name": "recipe-plugin",
-  "version": "0.1.0+codex.20260809083927",
+  "name": "recipe",
+  "version": "0.1.0+codex.20260809084923",
   "description": "Search and read cooking recipes",
   "author": {
     "name": "Edgestream"
