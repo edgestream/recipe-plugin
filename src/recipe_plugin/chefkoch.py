@@ -18,6 +18,14 @@ class ChallengeRequiredError(RuntimeError):
     """Raised when Chefkoch requires an interactive browser challenge."""
 
 
+class RateLimitedError(RuntimeError):
+    """Raised when Chefkoch rejects the shared upstream IP temporarily."""
+
+    def __init__(self, retry_after: str | None = None) -> None:
+        self.retry_after = retry_after
+        super().__init__("Chefkoch rate-limited this service's upstream IP.")
+
+
 class ChefkochClient:
     """Fetches public recipe data without credentials or persisted state."""
 
@@ -48,6 +56,8 @@ class ChefkochClient:
                 async with session.get(url, allow_redirects=True) as response:
                     html = await response.text()
                     _raise_if_challenged(html)
+                    if response.status == 429:
+                        raise RateLimitedError(response.headers.get("Retry-After"))
                     if response.status >= 500 and attempt == 0:
                         continue
                     if response.status != 200:

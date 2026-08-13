@@ -8,7 +8,7 @@ from typing import Any
 from mcp.server.fastmcp import FastMCP
 from mcp.types import ToolAnnotations
 
-from .chefkoch import ChallengeRequiredError, ChefkochClient
+from .chefkoch import ChallengeRequiredError, ChefkochClient, RateLimitedError
 from .recipe_jsonld import RecipeNotFoundError
 
 mcp = FastMCP(
@@ -33,6 +33,11 @@ def _error(exc: Exception) -> dict[str, str]:
         return {"outcome": "recipe_not_found", "message": "Recipe details were not found."}
     if isinstance(exc, ChallengeRequiredError):
         return {"outcome": "challenge_required", "message": "Chefkoch requires an interactive client challenge."}
+    if isinstance(exc, RateLimitedError):
+        message = "Chefkoch is currently rate-limiting this service's upstream IP. Please try again later."
+        if exc.retry_after and exc.retry_after.isdigit() and int(exc.retry_after) > 0:
+            message = f"{message} Retry after {exc.retry_after} seconds."
+        return {"outcome": "rate_limited", "message": message}
     if isinstance(exc, ValueError):
         return {"outcome": "invalid_request", "message": str(exc)}
     return {"outcome": "upstream_error", "message": "Chefkoch could not complete the request."}
