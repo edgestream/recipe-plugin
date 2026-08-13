@@ -1,6 +1,6 @@
 {
-  "name": "recipe-dev",
-  "version": "0.1.1-dev.0",
+  "name": "recipe",
+  "version": "0.1.0",
   "description": "Search and read cooking recipes",
   "author": {
     "name": "Edgestream"
