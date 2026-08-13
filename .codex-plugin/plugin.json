@@ -6,7 +6,7 @@
     "name": "Edgestream"
   },
   "interface": {
-    "displayName": "Recipe",
+    "displayName": "Recipe Dev",
     "shortDescription": "Search and read cooking recipes",
     "longDescription": "Provides structured recipe data from various pluggable recipe providers.",
     "developerName": "Edgestream",
